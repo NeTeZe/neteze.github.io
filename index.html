@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mon catalogue · jeux, animés & projets</title>
+    <title>NeTeZe · jeux, animés & projets</title>
     <meta name="description" content="Mes notes de jeux vidéo, mes animés & séries, et mes projets de dev perso." />
 
     <!-- Polices -->
@@ -23,9 +23,9 @@
 </div>
 
 <div class="wrap">
-    <!-- Navigation (modifie le pseudo ✿) -->
+    <!-- Navigation -->
     <nav class="nav">
-        <a class="brand" href="index.html">✿ <span>pseudo</span></a>
+        <a class="brand" href="index.html">✿ <span>NeTeZe</span></a>
         <div class="tabs">
             <a href="index.html" aria-current="page">Accueil</a>
             <a href="jeux.html">Jeux</a>
@@ -34,20 +34,14 @@
         </div>
     </nav>
 
-    <!-- Héros -->
-    <header class="hero">
-        <span class="eyebrow">✦ journal perso</span>
-        <h1>Ce que j'aime, noté à ma façon.</h1>
-        <p>Mes jeux vidéo, mes animés et séries, et les projets sur lesquels je bricole&nbsp;— avec des avis honnêtes et quelques étoiles de trop.</p>
-    </header>
+    <!-- Titre invisible (accessibilité / SEO) -->
+    <h1 class="sr-only">NeTeZe — mon catalogue</h1>
 
     <!-- Les 3 sections -->
     <main class="grid">
         <a class="card g1" href="jeux.html">
-            <span class="sticker">Notes</span>
             <span class="glyph" aria-hidden="true">🎮</span>
             <h2>Jeux vidéo</h2>
-            <p class="desc">Notes, avis et coups de cœur sur les jeux que j'ai poncés.</p>
             <div class="meta">
                 <span class="count">0 jeu noté</span>
                 <span class="go" aria-hidden="true">Voir →</span>
@@ -55,10 +49,8 @@
         </a>
 
         <a class="card g2" href="animes.html">
-            <span class="sticker">Avis</span>
             <span class="glyph" aria-hidden="true">📺</span>
             <h2>Animés &amp; séries</h2>
-            <p class="desc">Ce que j'ai regardé, adoré&hellip; ou abandonné en route.</p>
             <div class="meta">
                 <span class="count">0 titre</span>
                 <span class="go" aria-hidden="true">Explorer →</span>
@@ -66,20 +58,14 @@
         </a>
 
         <a class="card g3" href="projets.html">
-            <span class="sticker">Dev</span>
             <span class="glyph" aria-hidden="true">🛠️</span>
             <h2>Projets dev</h2>
-            <p class="desc">Les trucs que je code en perso, en cours ou terminés.</p>
             <div class="meta">
                 <span class="count">0 projet</span>
                 <span class="go" aria-hidden="true">Découvrir →</span>
             </div>
         </a>
     </main>
-
-    <footer>
-        Fait avec 💜 — <span id="year"></span>
-    </footer>
 </div>
 
 <!-- Script -->

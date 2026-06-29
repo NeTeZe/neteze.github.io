@@ -1,2 +1,2 @@
-// Affiche l'année courante dans le pied de page
-document.getElementById("year").textContent = new Date().getFullYear();
+// Rien à exécuter pour l'instant sur la page d'accueil.
+// Ce fichier servira pour les pages Jeux / Animés / Projets (notes, filtres, etc.).
