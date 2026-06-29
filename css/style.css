@@ -1,43 +1,45 @@
 :root {
-    --bg:      #E8E1F6;   /* violet pastel, doux */
-    --tint:    #DCD2F0;   /* nuance un peu plus soutenue (placeholder) */
-    --rose:    #ED73AE;
-    --violet:  #8A57D6;
-    --grape:   #5C3A8E;
-    --ink:     #43324F;
-    --card:    #FFFFFF;
-    --border:  #E1D5EE;
-    --gold:    #F6B83D;   /* couleur des étoiles */
+    /* ===== Color palette (reused everywhere via var(--name)) ===== */
+    --bg:      #E8E1F6;   /* page background - soft pastel violet */
+    --tint:    #DCD2F0;   /* slightly deeper tint - cover placeholder */
+    --rose:    #ED73AE;   /* pink accent */
+    --violet:  #8A57D6;   /* main violet */
+    --grape:   #5C3A8E;   /* dark violet - titles & text */
+    --ink:     #43324F;   /* default body text color */
+    --card:    #FFFFFF;   /* card / panel background */
+    --border:  #E1D5EE;   /* light borders */
+    --gold:    #F6B83D;   /* star rating color */
 }
 
+/* Reset: remove default spacing, size elements predictably */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: "Nunito", system-ui, sans-serif;
     color: var(--ink);
     background: var(--bg);
-    min-height: 100vh;
+    min-height: 100vh;          /* always fill the screen height */
     line-height: 1.6;
 }
 
-/* Les liens déjà cliqués gardent leur couleur d'origine */
+/* Visited links keep their normal color (no purple) */
 a:visited { color: inherit; }
 
-/* Largeur centrée */
+/* Centered container with a max width */
 .wrap {
     max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 28px;
+    margin: 0 auto;             /* center horizontally */
+    padding: 0 28px;            /* side breathing room */
 }
 
-/* Barre de navigation */
+/* ===== Top navigation bar ===== */
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex;                      /* items on one row */
+    align-items: center;               /* vertically centered */
+    justify-content: space-between;    /* brand left, tabs right */
     gap: 16px;
     padding: 26px 0;
-    flex-wrap: wrap;
+    flex-wrap: wrap;                   /* wrap on small screens */
 }
 .brand {
     font-family: "Fredoka", sans-serif;
@@ -46,15 +48,16 @@ a:visited { color: inherit; }
     color: var(--grape);
     text-decoration: none;
 }
-.brand span { color: var(--rose); }
+.brand span { color: var(--rose); }   /* pink part of the name */
 
+/* Pill-shaped tab group */
 .tabs {
     display: flex;
     gap: 6px;
     background: var(--card);
     border: 1px solid var(--border);
     padding: 6px;
-    border-radius: 999px;
+    border-radius: 999px;              /* fully rounded ends */
 }
 .tabs a {
     font-size: 0.98rem;
@@ -64,49 +67,49 @@ a:visited { color: inherit; }
     padding: 9px 18px;
     border-radius: 999px;
 }
-.tabs a:hover { background: #EFE9FB; }
-.tabs a[aria-current="page"] {
+.tabs a:hover { background: #EFE9FB; }            /* light violet on hover */
+.tabs a[aria-current="page"] {                    /* the active page tab */
     background: var(--violet);
     color: #fff;
 }
 
-/* Titre de page (Games / Projects / Links) */
+/* Page title (Games / Projects / Links) - scales with screen */
 main > h1 {
     font-family: "Fredoka", sans-serif;
     font-weight: 600;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);  /* min, preferred, max */
     color: var(--grape);
     padding-top: 14px;
 }
 
-/* Grille des cartes (page d'accueil) — agrandie */
+/* ===== Home page card grid ===== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
     gap: 28px;
     padding: 64px 0 90px;
 }
 .card {
-    --accent: var(--rose);
+    --accent: var(--rose);              /* per-card accent color */
     display: flex;
-    flex-direction: column;
+    flex-direction: column;             /* stack content vertically */
     min-height: 300px;
     padding: 38px 34px;
     background: var(--card);
     border: 1px solid var(--border);
-    border-top: 6px solid var(--accent);
+    border-top: 6px solid var(--accent);  /* colored top strip */
     border-radius: 24px;
     text-decoration: none;
     color: var(--ink);
 }
-.card.g1 { --accent: #ED73AE; }
-.card.g2 { --accent: #A87BE6; }
-.card.g3 { --accent: #7C8AE6; }
+.card.g1 { --accent: #ED73AE; }         /* Games - pink */
+.card.g2 { --accent: #A87BE6; }         /* Projects - violet */
+.card.g3 { --accent: #7C8AE6; }         /* Links - periwinkle */
 
-.card:hover { border-color: var(--accent); }
+.card:hover { border-color: var(--accent); }  /* border lights up on hover */
 
 .glyph {
-    font-size: 3.4rem;
+    font-size: 3.4rem;                  /* the big emoji */
     margin-bottom: 22px;
 }
 .card h2 {
@@ -116,8 +119,9 @@ main > h1 {
     color: var(--grape);
 }
 
+/* Bottom row of each card */
 .meta {
-    margin-top: auto;
+    margin-top: auto;                   /* push to bottom of the card */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -127,47 +131,51 @@ main > h1 {
     font-size: 0.85rem;
     color: var(--accent);
 }
-.go {
+.go {                                   /* the "View →" arrow text */
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--accent);
 }
 
-/* Liste de jeux (page Games) */
+/* ===== Games page: list of game cards ===== */
 .games-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;             /* one game per row */
     gap: 24px;
     margin-top: 36px;
     padding-bottom: 80px;
 }
 .game {
-    display: flex;
+    display: flex;                       /* cover left, info right */
     gap: 26px;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 22px;
     padding: 24px;
 }
+
+/* Game cover / logo box */
 .game-cover {
-    flex: 0 0 150px;
-    aspect-ratio: 3 / 4;
+    flex: 0 0 150px;                    /* fixed width, no shrink */
+    aspect-ratio: 3 / 4;               /* cover-like shape */
     border-radius: 16px;
-    overflow: hidden;
+    overflow: hidden;                  /* clip the image to rounded corners */
     background: var(--tint);
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.game-cover:has(.game-cover-ph) { border: 2px dashed #C9B6E8; }
-.game-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.game-cover-ph {
+.game-cover:has(.game-cover-ph) { border: 2px dashed #C9B6E8; }  /* dashed only while empty */
+.game-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }  /* fill the box */
+.game-cover-ph {                       /* placeholder text shown before adding an image */
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--violet);
     text-align: center;
     padding: 10px;
 }
+
+/* Title + rating + comment */
 .game-info {
     display: flex;
     flex-direction: column;
@@ -179,15 +187,17 @@ main > h1 {
     font-size: 1.6rem;
     color: var(--grape);
 }
+
+/* Star rating row */
 .stars {
     display: flex;
     align-items: center;
     gap: 5px;
     font-size: 1.2rem;
 }
-.stars i { color: var(--gold); }
-.stars .fa-regular { color: #D6C7EC; }
-.stars-num {
+.stars i { color: var(--gold); }            /* filled / half stars */
+.stars .fa-regular { color: #D6C7EC; }      /* empty stars (faded) */
+.stars-num {                                /* the "3,5 / 5" text */
     margin-left: 10px;
     font-size: 0.95rem;
     font-weight: 700;
@@ -195,20 +205,20 @@ main > h1 {
 }
 .game-comment {
     color: var(--ink);
-    opacity: 0.85;
+    opacity: 0.85;                          /* slightly softer than titles */
 }
 
-/* Liste des réseaux (page Links) */
+/* ===== Links page: social buttons ===== */
 .social {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;                 /* buttons stacked in a column */
     gap: 12px;
     max-width: 420px;
     margin-top: 36px;
 }
 .social-link {
     display: flex;
-    align-items: center;
+    align-items: center;                    /* icon and label aligned */
     gap: 14px;
     padding: 14px 20px;
     background: var(--card);
@@ -221,7 +231,7 @@ main > h1 {
 }
 .social-link i {
     font-size: 1.5rem;
-    width: 28px;
+    width: 28px;                            /* fixed width keeps labels aligned */
     text-align: center;
 }
 .social-link:hover {
@@ -229,7 +239,7 @@ main > h1 {
     background: #F0EBFA;
 }
 
-/* Couleur de marque de chaque réseau (icône) */
+/* Brand color for each social icon */
 .fa-letterboxd { color: #00D735; }
 .fa-discord    { color: #5865F2; }
 .fa-github     { color: #181717; }
@@ -238,11 +248,13 @@ main > h1 {
 .fa-youtube    { color: #FF0000; }
 .fa-x-twitter  { color: #000000; }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 820px) {
+    /* Tablet/phone: cards in a single column */
     .grid { grid-template-columns: 1fr; padding: 40px 0 70px; }
 }
 @media (max-width: 560px) {
+    /* Narrow phones: stack cover above game info */
     .game { flex-direction: column; }
     .game-cover { flex: 0 0 auto; width: 150px; }
 }
