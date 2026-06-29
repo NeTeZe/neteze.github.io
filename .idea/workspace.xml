@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7b31096a-d506-433d-a83e-43bc510ba49e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/jeux.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/liens.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/links.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/projets.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/games.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/games.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/links.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/links.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/projects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
       <updated>1782733321044</updated>
       <workItem from="1782733327427" duration="1381000" />
       <workItem from="1782734760090" duration="3361000" />
-      <workItem from="1782743889426" duration="1014000" />
+      <workItem from="1782743889426" duration="1536000" />
     </task>
     <servers />
   </component>
