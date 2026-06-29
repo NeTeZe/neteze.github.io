@@ -102,7 +102,6 @@ body {
     color: var(--grape);
 }
 
-/* Ligne du bas des cartes-liens internes */
 .meta {
     margin-top: auto;
     display: flex;
@@ -116,31 +115,6 @@ body {
 }
 .go {
     font-weight: 700;
-    color: var(--accent);
-}
-
-/* Bloc liens externes */
-.chips {
-    margin-top: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-.chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--grape);
-    text-decoration: none;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 6px 12px;
-    border-radius: 999px;
-}
-.chip:hover {
-    border-color: var(--accent);
     color: var(--accent);
 }
 
